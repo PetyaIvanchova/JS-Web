@@ -1,0 +1,17 @@
+const fs = require('fs');
+
+const writeStream = fs.createWriteStream('./data.txt', {encoding: 'utf8'});
+
+const chunk1 = 'AAAAA';
+const chunk2 = 'BBBBB';
+const chunk3 = 'CCCCC';
+
+writeStream.write(chunk1);
+writeStream.write(chunk2);
+writeStream.write(chunk3);
+
+writeStream.on('close', () => {
+    console.log('Stoped!');
+});
+
+writeStream.end();
