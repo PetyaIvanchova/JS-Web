@@ -14,6 +14,7 @@ app.get('/', (req,res) => {
     <p><a href='/register'>Register</a></p>
     <p><a href='/login'>Login</a></p>
     <p><a href='/profile'>Profile</a></p>
+    <p><a href='/logout'>Logout</a></p>
     `);
 });
 
@@ -85,5 +86,9 @@ app.get('/profile', (req,res) => {
     res.send(`<h1>
     Hello ${username}</h1>`)
 });
+
+app.get('/logout', (req,res) => {
+    res.clearCookie('auth');
+})
 
 app.listen(5002);
