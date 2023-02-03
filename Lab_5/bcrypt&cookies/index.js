@@ -89,6 +89,7 @@ app.get('/profile', (req,res) => {
 
 app.get('/logout', (req,res) => {
     res.clearCookie('auth');
+    res.redirect('/');
 })
 
 app.listen(5002);
